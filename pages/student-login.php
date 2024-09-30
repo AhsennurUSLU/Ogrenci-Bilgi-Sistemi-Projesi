@@ -1,5 +1,7 @@
-<?php include  "../includes/header.php"  ?>
-<?php include  "../includes/navbar.php"  ?>
+<?php include  "../config.php"  ?>
+<?php include __DIR__ .  "/../includes/header.php"  ?>
+
+<?php include __DIR__ . "/../includes/navbar.php"  ?>
 
 
 <style>
@@ -57,6 +59,8 @@
         /* Hover durumunda da alt çizgiyi kaldırır */
         color: #96CEB4;
     }
+
+    
 </style>
 
 
@@ -84,4 +88,4 @@
 
 
 
-<?php include  "../includes/footer.php"  ?>
+<?php include  __DIR__ . "/../includes/footer.php"  ?>

@@ -1,5 +1,6 @@
-<?php include  "../includes/header.php"  ?>
-<?php include  "../includes/navbar.php"  ?>
+<?php include  "../config.php" ;  ?>
+<?php include __DIR__ .  "/../includes/header.php"  ?>
+<?php include   __DIR__ . "/../includes/navbar.php"  ?>
 
 <style>
     .wrapper {
@@ -83,4 +84,4 @@
 </div>
 
 
-<?php include  "../includes/footer.php"  ?>
+<?php include  __DIR__ . "/../includes/footer.php"  ?>
