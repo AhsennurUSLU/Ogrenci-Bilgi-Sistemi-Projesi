@@ -11,45 +11,45 @@
             <li class="nav-item">
               <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                 <i class="menu-icon mdi mdi-floor-plan"></i>
-                <span class="menu-title">UI Elements</span>
+                <span class="menu-title">Öğretmen İşlemleri</span>
                 <i class="menu-arrow"></i>
               </a>
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="pages/buttons.php">Buttons</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/dropdowns.php">Dropdowns</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/typography.php">Typography</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages2/buttons.php">Buttons</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages2/dropdowns.php">Dropdowns</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages2/typography.php">Typography</a></li>
                 </ul>
               </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
                 <i class="menu-icon mdi mdi-card-text-outline"></i>
-                <span class="menu-title">Form elements</span>
+                <span class="menu-title">Öğrenci İşlemleri</span>
                 <i class="menu-arrow"></i>
               </a>
               <div class="collapse" id="form-elements">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"><a class="nav-link" href="pages/basic_elements.php">Basic Elements</a></li>
+                  <li class="nav-item"><a class="nav-link" href="pages/addStudent.php">Öğrenci Ekle</a></li>
                 </ul>
               </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
                 <i class="menu-icon mdi mdi-chart-line"></i>
-                <span class="menu-title">Öğrenci İşlemleri</span>
+                <span class="menu-title">Duyuru İşlemleri</span>
                 <i class="menu-arrow"></i>
               </a>
               <div class="collapse" id="charts">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="pages/addStudent.php">Öğrenci Ekle</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="">Duyuru Ekle</a></li>
                 </ul>
               </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
                 <i class="menu-icon mdi mdi-table"></i>
-                <span class="menu-title">Tables</span>
+                <span class="menu-title">menu1</span>
                 <i class="menu-arrow"></i>
               </a>
               <div class="collapse" id="tables">
@@ -61,7 +61,7 @@
             <li class="nav-item">
               <a class="nav-link" data-bs-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
                 <i class="menu-icon mdi mdi-layers-outline"></i>
-                <span class="menu-title">Icons</span>
+                <span class="menu-title">menu2</span>
                 <i class="menu-arrow"></i>
               </a>
               <div class="collapse" id="icons">
@@ -73,7 +73,7 @@
             <li class="nav-item">
               <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
                 <i class="menu-icon mdi mdi-account-circle-outline"></i>
-                <span class="menu-title">User Pages</span>
+                <span class="menu-title">menu3</span>
                 <i class="menu-arrow"></i>
               </a>
               <div class="collapse" id="auth">
