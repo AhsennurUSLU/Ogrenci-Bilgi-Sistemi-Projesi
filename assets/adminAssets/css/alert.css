@@ -1,0 +1,27 @@
+
+/* başarı alerti */
+.alert {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    position: relative;
+    display: none;  /* Başlangıçta görünmeyecek */
+    text-align: center;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}

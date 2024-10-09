@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>OBS Admin</title>
     <!-- plugins:css -->
+    <link rel="stylesheet" href="/assets/adminAssets/css/alert.css">
     <link rel="stylesheet" href="/OBS-Project/assets/adminAssets/dist/assets/vendors/feather/feather.css">
     <link rel="stylesheet" href="/OBS-Project/assets/adminAssets/dist/assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="/OBS-Project/assets/adminAssets/dist/assets/vendors/ti-icons/css/themify-icons.css">

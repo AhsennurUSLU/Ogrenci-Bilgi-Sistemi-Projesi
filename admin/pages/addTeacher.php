@@ -19,12 +19,12 @@
                 <div class="form-row">
 
                     <div class="form-group col-md-6">
-                        <label for="name">İsim</label>
-                        <input type="text" class="form-control" id="name" name="name">
+                        <label for="Tname">İsim</label>
+                        <input type="text" class="form-control" id="Tname" name="Tname">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="surname">Soyisim</label>
-                        <input type="text" class="form-control" id="surname" name="surname">
+                        <label for="Tsurname">Soyisim</label>
+                        <input type="text" class="form-control" id="Tsurname" name="Tsurname">
                     </div>
                     
                   
@@ -33,46 +33,46 @@
                 <div class="form-row">
 
                     <div class="form-group col-md-6">
-                        <label for="identificationNum">T.C Kimlik Numarası</label>
-                        <input type="text" class="form-control" id="identificationNum" name="identificationNum">
+                        <label for="TidentificationNum">T.C Kimlik Numarası</label>
+                        <input type="text" class="form-control" id="TidentificationNum" name="TidentificationNum">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="studentNum">Okul Numarası</label>
-                        <input type="text" class="form-control" id="studentNum" name="studentNum">
+                        <label for="teacherNum">Öğretmen Numarası</label>
+                        <input type="text" class="form-control" id="teacherNum" name="teacherNum">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="password">Şifre</label>
-                        <input type="password" class="form-control" id="password" name="password">
+                        <label for="Tpassword">Şifre</label>
+                        <input type="password" class="form-control" id="Tpassword" name="Tpassword">
                     </div>
                 </div>
 
                 <div class="form-row">
 
                     <div class="form-group col-md-6">
-                        <label for="phone">Telefon</label>
-                        <input type="text" class="form-control" id="phone" name="phone">
+                        <label for="Tphone">Telefon</label>
+                        <input type="text" class="form-control" id="Tphone" name="Tphone">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="class">Sınıf</label>
-                        <select id="class" class="form-control" name="class">
+                        <label for="appellation">Ünvan</label>
+                        <select id="appellation" class="form-control" name="appellation">
                             <option selected>Seç</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
+                            <option>Doktor</option>
+                            <option>Araştırma Görevlisi</option>
+                            <option>Doçent</option>
+                            <option>Profesör</option>
                         </select>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="email">E-Mail</label>
-                        <input type="email" class="form-control" id="email" name="email">
+                        <label for="Temail">E-Mail</label>
+                        <input type="email" class="form-control" id="Temail" name="Temail">
                     </div>
                 </div>
 
                 <div class="form-row">
 
                     <div class="form-group col-md-6">
-                        <label for="faculty">Fakülte</label>
-                        <select id="faculty" class="form-control" name="faculty">
+                        <label for="Tfaculty">Fakülte</label>
+                        <select id="Tfaculty" class="form-control" name="Tfaculty">
                             <option selected>Seç</option>
                             <option>Teknoloji Fakültesi</option>
                             <option>Tıp Fakültesi</option>
@@ -83,8 +83,8 @@
                         </select>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="department">Bölüm</label>
-                        <select id="department" class="form-control" name="department">
+                        <label for="Tdepartment">Bölüm</label>
+                        <select id="Tdepartment" class="form-control" name="Tdepartment">
                             <option selected>Seç</option>
                             <option>Bilgisayar mühendisliği</option>
                             <option>Elektrik-Elektronik mühendisliği</option>
@@ -93,19 +93,14 @@
                         </select>
                     </div>
 
-                    <div class="form-group col-md-6">
-                        <label for="advisor">Danışman</label>
-                        <input type="text" class="form-control" id="advisor" name="advisor">
-                    </div>
-
                  
                 </div>
                 <div class="form-group col-md-6">
-                        <label for="studentPhoto">Fotoğraf Seç</label>
-                        <input type="file" class="form-control-file" id="studentPhoto" name="studentPhoto">
+                        <label for="teacherPhoto">Fotoğraf Seç</label>
+                        <input type="file" class="form-control-file" id="teacherPhoto" name="teacherPhoto">
                     </div>
 
-                <button type="submit" class="btn btn-primary" name="addStudent">Kaydet</button>
+                <button type="submit" class="btn btn-primary" name="addTeacher">Kaydet</button>
             </form>
         </div>
 

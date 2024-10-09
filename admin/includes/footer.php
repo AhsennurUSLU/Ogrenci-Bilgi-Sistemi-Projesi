@@ -13,6 +13,8 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
+ 
+    <script src="/assets/adminAssets/js/alert.js"></script>
     <script src="/OBS-Project/assets/adminAssets/dist/assets/vendors/js/vendor.bundle.base.js"></script>
     <script src="/OBS-Project/assets/adminAssets/dist/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
     <!-- endinject -->
