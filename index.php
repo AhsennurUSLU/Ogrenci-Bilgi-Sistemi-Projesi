@@ -4,15 +4,6 @@
 <?php include __DIR__ . "/pages/home.php" ;  ?>
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-
 
 
 

@@ -1,7 +1,7 @@
 <?php include  "../config.php"  ?>
 <?php include __DIR__ .  "/../includes/header.php"  ?>
 
-<?php include __DIR__ . "/../includes/navbar.php"  ?>
+
 
 
 <style>
@@ -63,7 +63,7 @@
     
 </style>
 
-
+<div class="container">
 <div class="wrapper">
     <div class="col-md-6">
         <div class="card">
@@ -86,6 +86,4 @@
     </div>
 </div>
 
-
-
-<?php include  __DIR__ . "/../includes/footer.php"  ?>
+</div>

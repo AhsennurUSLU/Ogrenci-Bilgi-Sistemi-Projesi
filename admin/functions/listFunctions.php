@@ -52,9 +52,38 @@ function getDepartmentsByFaculty($faculty_id) {
 
 
 
+// öğretmen verilerini çek
+// Veritabanı bağlantısını dahil et
+
+
+function getTeachers() {
+    global $connection; // Bağlantı değişkenini global olarak al
+
+    // Sorgu
+    $sql = "SELECT teacherPhoto, appellation, name, surname, identificationNum, teacherNum, faculty, department, email, phone FROM teacher";
+
+    // Sorguyu çalıştır
+    $result = mysqli_query($connection, $sql);
+
+    // Sorgu hatasını kontrol et
+    if (!$result) {
+        die("Sorgu hatası: " . mysqli_error($connection));
+    }
+
+    // Sonuçları kontrol et ve döndür
+    if (mysqli_num_rows($result) > 0) {
+        return mysqli_fetch_all($result, MYSQLI_ASSOC); // Tüm sonuçları dizi olarak döndür
+    } else {
+        return []; // Boş dizi döndür
+    }
+}
 
 
 
 ?>
+
+
+
+
 
 

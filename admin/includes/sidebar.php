@@ -16,7 +16,7 @@
               </a>
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/OBS-Project/admin/pages/generalTeacherList.php">Tüm Öğretmenler</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/OBS-Project/admin/pages/teacherList.php">Tüm Öğretmenler</a></li>
                   <li class="nav-item"> <a class="nav-link" href="/OBS-Project/admin/pages/addTeacher.php">Öğretmen Ekle</a></li>
                   <li class="nav-item"> <a class="nav-link" href="pages2/typography.php">Typography</a></li>
                 </ul>
@@ -44,7 +44,7 @@
               </a>
               <div class="collapse" id="charts">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="">Ders Ekle</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="/OBS-Project/admin/pages/addLessons.php">Ders Ekle</a></li>
                 </ul>
               </div>
             </li>

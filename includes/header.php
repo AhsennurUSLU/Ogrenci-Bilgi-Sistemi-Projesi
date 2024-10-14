@@ -21,6 +21,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+<!-- admin -->
+
+<link rel="stylesheet" href="/assets/adminAssets/css/alert.css">
+    <link rel="stylesheet" href="/OBS-Project/assets/adminAssets/dist/assets/vendors/feather/feather.css">
+    <link rel="stylesheet" href="/OBS-Project/assets/adminAssets/dist/assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/OBS-Project/assets/adminAssets/dist/assets/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="/OBS-Project/assets/adminAssets/dist/assets/vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/OBS-Project/assets/adminAssets/dist/assets/vendors/typicons/typicons.css">
+    <link rel="stylesheet" href="/OBS-Project/assets/adminAssets/dist/assets/vendors/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="/OBS-Project/assets/adminAssets/dist/assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/OBS-Project/assets/adminAssets/dist/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="/OBS-Project/assets/adminAssets/dist/assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+    <link rel="stylesheet" type="text/css" href="/OBS-Project/assets/adminAssets/dist/assets/js/select.dataTables.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/OBS-Project/assets/adminAssets/dist/assets/css/style.css"/>
+    <!-- endinject -->
+    <link rel="shortcut icon" href="/OBS-Project/assets/adminAssets/dist/assets/images/favicon.png" />
 
     <title>OBS</title>
 </head>

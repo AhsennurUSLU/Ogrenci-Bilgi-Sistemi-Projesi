@@ -19,13 +19,10 @@
                 <div class="form-row">
 
                     <div class="form-group col-md-6">
-                        <label for="Tname">İsim</label>
-                        <input type="text" class="form-control" id="Tname" name="Tname">
+                        <label for="name">Ders Adı</label>
+                        <input type="text" class="form-control" id="name" name="name">
                     </div>
-                    <div class="form-group col-md-6">
-                        <label for="Tsurname">Soyisim</label>
-                        <input type="text" class="form-control" id="Tsurname" name="Tsurname">
-                    </div>
+                  
                     
                   
                 </div>
@@ -33,47 +30,47 @@
                 <div class="form-row">
 
                     <div class="form-group col-md-6">
-                        <label for="TidentificationNum">T.C Kimlik Numarası</label>
-                        <input type="text" class="form-control" id="TidentificationNum" name="TidentificationNum">
+                        <label for="identificationNum">Ders Numarası</label>
+                        <input type="text" class="form-control" id="identificationNum" name="identificationNum">
                     </div>
-                    <div class="form-group col-md-6">
-                        <label for="teacherNum">Öğretmen Numarası</label>
-                        <input type="text" class="form-control" id="teacherNum" name="teacherNum">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="Tpassword">Şifre</label>
-                        <input type="password" class="form-control" id="Tpassword" name="Tpassword">
-                    </div>
+                    
                 </div>
 
                 <div class="form-row">
 
                     <div class="form-group col-md-6">
-                        <label for="Tphone">Telefon</label>
-                        <input type="text" class="form-control" id="Tphone" name="Tphone">
+                        <label for="phone">ACTS</label>
+                        <input type="text" class="form-control" id="phone" name="phone">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="appellation">Ünvan</label>
-                        <select id="appellation" class="form-control" name="appellation">
+                        <label for="class">Öğretim Görevlisi</label>
+                        <select id="class" class="form-control" name="class">
                             <option selected>Seç</option>
-                            <option>Doktor</option>
-                            <option>Araştırma Görevlisi</option>
-                            <option>Doçent</option>
-                            <option>Profesör</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
                         </select>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="Temail">E-Mail</label>
-                        <input type="email" class="form-control" id="Temail" name="Temail">
+                        <label for="class">Ders Dönemi</label>
+                        <select id="class" class="form-control" name="class">
+                            <option selected>Seç</option>
+                            <option>Güz Dönemi</option>
+                            <option>Bahar Dönemi</option>
+                           
+                        </select>
                     </div>
+                   
                 </div>
 
                 <div class="form-row">
 
                     <div class="form-group col-md-6">
-                        <label for="Tfaculty">Fakülte</label>
+                        <label for="faculty">Fakülte</label>
                       
-                        <?php
+                          
+                            <?php
                       
                       include "../functions/listFunctions.php";
 
@@ -99,15 +96,21 @@
                           
                         </select>
                     </div>
-
-                 
-                </div>
-                <div class="form-group col-md-6">
-                        <label for="teacherPhoto">Fotoğraf Seç</label>
-                        <input type="file" class="form-control-file" id="teacherPhoto" name="teacherPhoto">
+                    <div class="form-group col-md-6">
+                        <label for="class">Dersi Alacak Sınıf</label>
+                        <select id="class" class="form-control" name="class">
+                            <option selected>Seç</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
                     </div>
 
-                <button type="submit" class="btn btn-primary" name="addTeacher">Kaydet</button>
+                </div>
+               
+
+                <button type="submit" class="btn btn-primary" name="addLessons">Kaydet</button>
             </form>
         </div>
 
@@ -148,6 +151,3 @@
         });
     });
 </script>
-
-
- 

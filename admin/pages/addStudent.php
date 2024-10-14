@@ -72,24 +72,32 @@
 
                     <div class="form-group col-md-6">
                         <label for="faculty">Fakülte</label>
-                        <select id="faculty" class="form-control" name="faculty">
-                            <option selected>Seç</option>
-                            <option>Teknoloji Fakültesi</option>
-                            <option>Tıp Fakültesi</option>
-                            <option>Eğitim Fakültesi</option>
-                            <option>Hukuk Fakültesi</option>
-                            <option>Mimarlık Fakültesi</option>
-                            <option>Veterinerlik Fakültesi</option>
-                        </select>
-                    </div>
+                      
+                          
+                            <?php
+                      
+                      include "../functions/listFunctions.php";
+
+                      // Fakülteleri al
+                      $faculties = getFaculties();
+
+                      echo  '<select id="faculty" class="form-control" name="faculty">';
+
+                      echo '<option selected>Seç</option>';
+                      foreach ($faculties as $faculty) {
+                        //  echo    '<option>' . htmlspecialchars($faculty) . '</option>';
+                          echo '<option value="' . $faculty['id'] . '">' . htmlspecialchars($faculty['name']) . '</option>';
+
+                      }
+                      echo '</select>';
+                      echo '</div>';
+                      ?>
+                   
                     <div class="form-group col-md-6">
                         <label for="department">Bölüm</label>
                         <select id="department" class="form-control" name="department">
                             <option selected>Seç</option>
-                            <option>Bilgisayar mühendisliği</option>
-                            <option>Elektrik-Elektronik mühendisliği</option>
-                            <option>Makine mühendisliği</option>
-                            <option>Gıda mühendisliği</option>
+                          
                         </select>
                     </div>
 
@@ -116,4 +124,33 @@
 <?php include "../includes/footer.php"; ?>
 
 
- 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Fakülte seçimi değiştiğinde
+        $('#faculty').on('change', function() {
+            var facultyId = $(this).val(); // Seçilen fakültenin id'sini al
+
+            if (facultyId) {
+                $.ajax({
+                    type: 'POST',
+                    url: '../functions/getDepartments.php', // Fakülteye göre bölümleri çeken PHP dosyası
+                    data: { faculty_id: facultyId },
+                    dataType: 'json',
+                    success: function(response) {
+                        $('#department').empty(); // Bölüm select kutusunu temizle
+                        $('#department').append('<option selected>Seç</option>'); // Varsayılan option ekle
+
+                        // Gelen bölümleri döngüyle ekleyelim
+                        $.each(response, function(key, value) {
+                            $('#department').append('<option value="' + value.id + '">' + value.name + '</option>');
+                        });
+                    }
+                });
+            } else {
+                $('#department').empty(); // Eğer fakülte seçilmediyse bölümleri temizle
+                $('#department').append('<option selected>Seç</option>'); // Varsayılan option ekle
+            }
+        });
+    });
+</script>

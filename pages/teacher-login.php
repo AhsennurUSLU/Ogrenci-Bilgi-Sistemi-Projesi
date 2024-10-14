@@ -1,6 +1,6 @@
 <?php include  "../config.php" ;  ?>
 <?php include __DIR__ .  "/../includes/header.php"  ?>
-<?php include   __DIR__ . "/../includes/navbar.php"  ?>
+
 
 <style>
     .wrapper {
@@ -61,7 +61,7 @@
 
 
 
-
+<div class="container">
 <div class="wrapper">
     <div class="col-md-6">
         <div class="card">
@@ -76,12 +76,14 @@
                         <label for="exampleInputPassword1">Parola</label>
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                     </div>
-                    <button type="submit" class="buton1">Giriş Yap</button>
+                    <!-- <button type="submit" class="buton1">Giriş Yap</button> -->
+                    <a  class="buton1" type="button" href="../pages/teacher-home-page.php">Giriş Yap</a>
+                   
                 </form>
             </div>
         </div>
     </div>
 </div>
+</div>
 
 
-<?php include  __DIR__ . "/../includes/footer.php"  ?>

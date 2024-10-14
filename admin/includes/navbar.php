@@ -24,10 +24,10 @@
           </ul>
           <ul class="navbar-nav ms-auto">
             <li class="nav-item dropdown d-none d-lg-block">
-              <a class="nav-link dropdown-bordered dropdown-toggle dropdown-toggle-split" id="messageDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false"> Select Category </a>
+              <a class="nav-link dropdown-bordered dropdown-toggle dropdown-toggle-split" id="messageDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false"> Kategori Seç </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="messageDropdown">
                 <a class="dropdown-item py-3">
-                  <p class="mb-0 fw-medium float-start">Select category</p>
+                  <p class="mb-0 fw-medium float-start">Kategori Seç</p>
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item">

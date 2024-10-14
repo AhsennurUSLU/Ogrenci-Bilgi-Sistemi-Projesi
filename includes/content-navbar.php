@@ -60,7 +60,7 @@
             <div class="d-flex justify-content-between align-items-center">
                 <!-- Sol Taraf -->
                 <div>
-                    <img src="assets/images/kep.png" alt="Logo">
+                    <img src="../assets/images/kep.png" alt="Logo">
                     <h3>ÖĞRENCİ BİLGİ SİSTEMİ</h3>
                 </div>
 
