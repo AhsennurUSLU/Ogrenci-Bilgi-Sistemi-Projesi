@@ -18,7 +18,7 @@
                 <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="/OBS-Project/admin/pages/teacherList.php">Tüm Öğretmenler</a></li>
                   <li class="nav-item"> <a class="nav-link" href="/OBS-Project/admin/pages/addTeacher.php">Öğretmen Ekle</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages2/typography.php">Typography</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="#">örnek</a></li>
                 </ul>
               </div>
             </li>

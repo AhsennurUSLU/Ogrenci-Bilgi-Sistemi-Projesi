@@ -1,6 +1,17 @@
 <?php
 session_start();
 
+// Admin girişi yapılmış mı kontrol et
+if (!isset($_SESSION['admin_id'])) {
+    // Eğer giriş yapılmamışsa, admin-login.php sayfasına yönlendir
+    header("Location: /OBS-Project/admin/pages/admin-login-page.php");
+    exit();
+}
+?>
+
+<?php
+
+
 
 // öğrenci ekleme alerti
 if (isset($_SESSION['success_message'])) {

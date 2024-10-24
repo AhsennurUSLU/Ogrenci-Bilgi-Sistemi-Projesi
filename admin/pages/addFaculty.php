@@ -1,3 +1,17 @@
+<?php
+session_start(); // Oturumu başlat
+
+// Admin girişi yapılmış mı kontrol et
+if (!isset($_SESSION['admin_id'])) {
+    // Eğer admin giriş yapmamışsa, login sayfasına yönlendir
+    header("Location: ../admin-login-page.php");
+    exit();
+}
+
+// Eğer bu kod buraya geldiyse, admin oturumu açmıştır
+?>
+
+
 <?php include "../includes/header.php"; ?>
 <div class="container-scroller">
     <?php include  "../includes/navbar.php";  ?>
