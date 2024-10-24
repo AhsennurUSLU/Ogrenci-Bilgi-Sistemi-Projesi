@@ -67,17 +67,18 @@
         <div class="card">
             <img src="../assets/images/teacher.png" class="card-img-top" alt="Logo">
             <div class="card-body">
-                <form>
+                <form method="POST" action="../functions/login.php"> 
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email"  placeholder="E-Mailinizi Giriniz.">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Parola</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <label for="password">Şifre</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Şifrenizi Giriniz.">
                     </div>
                     <!-- <button type="submit" class="buton1">Giriş Yap</button> -->
-                    <a  class="buton1" type="button" href="../pages/teacher-home-page.php">Giriş Yap</a>
+                   
+                    <button type="submit" name="loginTeacher" class="buton1">Giriş Yap</button>
                    
                 </form>
             </div>

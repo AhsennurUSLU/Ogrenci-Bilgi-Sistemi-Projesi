@@ -72,7 +72,7 @@
                                 <a class="nav-link text-white" href="#">Profilim</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="#">Çıkış Yap</a>
+                                <a class="nav-link text-white" href="../functions/logout.php">Çıkış Yap</a>
                             </li>
                          
                         </ul>

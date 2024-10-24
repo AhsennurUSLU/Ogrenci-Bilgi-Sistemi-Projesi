@@ -19,12 +19,12 @@
                 <div class="form-row">
 
                     <div class="form-group col-md-6">
-                        <label for="Tname">İsim</label>
-                        <input type="text" class="form-control" id="Tname" name="Tname">
+                        <label for="name">İsim</label>
+                        <input type="text" class="form-control" id="name" name="name">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="Tsurname">Soyisim</label>
-                        <input type="text" class="form-control" id="Tsurname" name="Tsurname">
+                        <label for="surname">Soyisim</label>
+                        <input type="text" class="form-control" id="surname" name="surname">
                     </div>
                     
                   
@@ -33,24 +33,24 @@
                 <div class="form-row">
 
                     <div class="form-group col-md-6">
-                        <label for="TidentificationNum">T.C Kimlik Numarası</label>
-                        <input type="text" class="form-control" id="TidentificationNum" name="TidentificationNum">
+                        <label for="identificationNum">T.C Kimlik Numarası</label>
+                        <input type="text" class="form-control" id="identificationNum" name="identificationNum">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="teacherNum">Öğretmen Numarası</label>
                         <input type="text" class="form-control" id="teacherNum" name="teacherNum">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="Tpassword">Şifre</label>
-                        <input type="password" class="form-control" id="Tpassword" name="Tpassword">
+                        <label for="password">Şifre</label>
+                        <input type="password" class="form-control" id="password" name="password">
                     </div>
                 </div>
 
                 <div class="form-row">
 
                     <div class="form-group col-md-6">
-                        <label for="Tphone">Telefon</label>
-                        <input type="text" class="form-control" id="Tphone" name="Tphone">
+                        <label for="phone">Telefon</label>
+                        <input type="text" class="form-control" id="phone" name="phone">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="appellation">Ünvan</label>
@@ -63,15 +63,15 @@
                         </select>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="Temail">E-Mail</label>
-                        <input type="email" class="form-control" id="Temail" name="Temail">
+                        <label for="email">E-Mail</label>
+                        <input type="email" class="form-control" id="email" name="email">
                     </div>
                 </div>
 
                 <div class="form-row">
 
                     <div class="form-group col-md-6">
-                        <label for="Tfaculty">Fakülte</label>
+                        <label for="faculty">Fakülte</label>
                       
                         <?php
                       

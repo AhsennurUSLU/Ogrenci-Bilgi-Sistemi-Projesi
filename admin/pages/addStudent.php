@@ -101,9 +101,21 @@
                         </select>
                     </div>
 
+                
                     <div class="form-group col-md-6">
                         <label for="advisor">Danışman</label>
-                        <input type="text" class="form-control" id="advisor" name="advisor">
+                        <select id="advisor" class="form-control" name="advisor">
+                            <option selected>Seç</option>
+                            <?php
+                            // Öğretmenleri al ve listele
+                           
+                            $teachers = getTeachers2();
+
+                            foreach ($teachers as $teacher) {
+                                echo '<option value="' . $teacher['id'] . '">' . htmlspecialchars($teacher['appellation']) . "  " . htmlspecialchars($teacher['name']) . "  "  . htmlspecialchars($teacher['surname']) . '</option>';
+                            }
+                            ?>
+                        </select>
                     </div>
 
                  

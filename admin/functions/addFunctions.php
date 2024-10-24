@@ -43,23 +43,31 @@ if(isset($_FILES['studentPhoto']) && $_FILES['studentPhoto']['error'] === UPLOAD
 // Sonrasında $studentPhotoPath'i veritabanına kaydet
 
 
-$sql = "INSERT INTO student (name,surname,identificationNum,studentNum,department,faculty,advisor,class,email,phone,password,studentPhoto) VALUES ('$name', '$surname', '$identificationNum', '$studentNum', '$department', '$faculty', '$advisor', '$class', '$email', '$phone', '$hashedPassword ', '$studentPhotoPath')";                        
+$sql = "INSERT INTO student (name, surname, identificationNum, studentNum, department, faculty, advisor, class, email, phone, password, studentPhoto) VALUES ('$name', '$surname', '$identificationNum', '$studentNum', '$department', '$faculty', '$advisor', '$class', '$email', '$phone', '$hashedPassword', '$studentPhotoPath')";                        
 
-if(mysqli_query($connection,$sql)){  
+if(mysqli_query($connection, $sql)) {
+    // Eklenen öğrenci ID'sini al
+    $student_id = mysqli_insert_id($connection);
 
-   // echo "Öğrenci başarıyla eklendi.";
-   $_SESSION['success_message'] = "Öğrenci başarıyla kaydedildi!";  // Session'a başarı mesajı ekliyoruz
-    header("location: ../home.php");
-    exit();
-    
+    // Öğrenci başarıyla eklendi, şimdi 'student_department' tablosuna ekleyelim
+    $sql2 = "INSERT INTO student_department (student_id, department_id) VALUES ('$student_id', '$department')";
+
+    if(mysqli_query($connection, $sql2)) {
+        $_SESSION['success_message'] = "Öğrenci başarıyla kaydedildi ve bölüm bilgisi eklendi!";
+        header("location: ../studentList.php");
+        exit();
     } else {
-        echo "Öğrenci eklenirken hata oluştu: " . mysqli_error($connection);
-       
+        echo "Öğrenci eklenirken hata oluştu (student_department): " . mysqli_error($connection);
     }
 
- 
-    mysqli_close($connection);
-    }
+} else {
+    echo "Öğrenci eklenirken hata oluştu (student): " . mysqli_error($connection);
+}
+
+mysqli_close($connection);
+}
+
+
 
 
 
@@ -67,17 +75,17 @@ if(mysqli_query($connection,$sql)){
 
 if($_SERVER["REQUEST_METHOD"]== "POST" && isset($_POST['addTeacher'])) {
 
-    $name = htmlspecialchars(mysqli_real_escape_string($connection, $_POST['Tname'])) ; 
-    $surname = htmlspecialchars(mysqli_real_escape_string($connection, $_POST['Tsurname'])) ; 
-    $identificationNum = htmlspecialchars(mysqli_real_escape_string($connection, $_POST['TidentificationNum'])) ; 
+    $name = htmlspecialchars(mysqli_real_escape_string($connection, $_POST['name'])) ; 
+    $surname = htmlspecialchars(mysqli_real_escape_string($connection, $_POST['surname'])) ; 
+    $identificationNum = htmlspecialchars(mysqli_real_escape_string($connection, $_POST['identificationNum'])) ; 
     $teacherNum = htmlspecialchars(mysqli_real_escape_string($connection, $_POST['teacherNum'])) ; 
-    $password = htmlspecialchars(mysqli_real_escape_string($connection, $_POST['Tpassword']));
+    $password = htmlspecialchars(mysqli_real_escape_string($connection, $_POST['password']));
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);  // Şifreyi hashle
-    $phone = htmlspecialchars(mysqli_real_escape_string($connection, $_POST['Tphone'])) ; 
+    $phone = htmlspecialchars(mysqli_real_escape_string($connection, $_POST['phone'])) ; 
     $appellation = htmlspecialchars(mysqli_real_escape_string($connection, $_POST['appellation'])) ; 
-    $email = htmlspecialchars(mysqli_real_escape_string($connection, $_POST['Temail'])) ; 
-    $faculty = htmlspecialchars(mysqli_real_escape_string($connection, $_POST['Tfaculty'])) ; 
-    $department = htmlspecialchars(mysqli_real_escape_string($connection, $_POST['Tdepartment'])) ; 
+    $email = htmlspecialchars(mysqli_real_escape_string($connection, $_POST['email'])) ; 
+    $faculty = htmlspecialchars(mysqli_real_escape_string($connection, $_POST['faculty'])) ; 
+    $department = htmlspecialchars(mysqli_real_escape_string($connection, $_POST['department'])) ; 
     $teacherPhoto = htmlspecialchars(mysqli_real_escape_string($connection, $_POST['teacherPhoto'])) ;
     
     // fotoğraf kaydetme işlemleri
@@ -102,7 +110,7 @@ if($_SERVER["REQUEST_METHOD"]== "POST" && isset($_POST['addTeacher'])) {
     // Sonrasında $studentPhotoPath'i veritabanına kaydet
     
     
-    $sql = "INSERT INTO teacher (name,surname,identificationNum,teacherNum,department,faculty,email,appellation,phone,teacherPhoto,password) VALUES ('$name', '$surname', '$identificationNum', '$teacherNum', '$department', '$faculty',  '$email','$appellation', '$phone','$teacherPhotoPath', '$hashedPassword ')";                        
+    $sql = "INSERT INTO teacher (name, surname, identificationNum, teacherNum, department, faculty, email, appellation, phone, teacherPhoto, password) VALUES ('$name', '$surname', '$identificationNum', '$teacherNum', '$department', '$faculty',  '$email','$appellation', '$phone','$teacherPhotoPath', '$hashedPassword')";                        
     
     if(mysqli_query($connection,$sql)){  
     
@@ -125,11 +133,13 @@ if($_SERVER["REQUEST_METHOD"]== "POST" && isset($_POST['addTeacher'])) {
 
 
 
+
+
 // Fakülte Ekleme işlemleri
 
 
 if($_SERVER["REQUEST_METHOD"]== "POST" && isset($_POST['addFaculty'])) {
-
+   
     $name = mysqli_real_escape_string($connection, $_POST['name']) ; 
     $facultyNum = htmlspecialchars(mysqli_real_escape_string($connection, $_POST['facultyNum'])) ; 
     $facultyDean = htmlspecialchars(mysqli_real_escape_string($connection, $_POST['facultyDean'])) ; 
@@ -155,6 +165,9 @@ if($_SERVER["REQUEST_METHOD"]== "POST" && isset($_POST['addFaculty'])) {
         mysqli_close($connection);
         }
     
+
+
+
 
 
 
@@ -193,6 +206,66 @@ if ($_SERVER["REQUEST_METHOD"]== "POST" && isset($_POST['addDepartment'])) {
 
 
 
+
+// ders ekleme işlemleri
+
+if ($_SERVER["REQUEST_METHOD"]== "POST" && isset($_POST['addLessons'])) {
+   
+    // Formdan gelen verileri al
+    $lessonName = mysqli_real_escape_string($connection, $_POST['lessonName']);
+    $lessonNum = mysqli_real_escape_string($connection, $_POST['lessonNum']);
+    $acts = mysqli_real_escape_string($connection, $_POST['acts']); 
+    $lessonPeriod = mysqli_real_escape_string($connection, $_POST['lessonPeriod']); 
+    $lessonYear = mysqli_real_escape_string($connection, $_POST['lessonYear']); 
+    $class = mysqli_real_escape_string($connection, $_POST['class']); 
+    $teacherId = mysqli_real_escape_string($connection, $_POST['teacherId']); 
+    $departmentId = mysqli_real_escape_string($connection, $_POST['departmentId']); 
+
+    
+    // Verileri 'lessons' tablosuna ekleyelim
+    $insertLessonQuery = "INSERT INTO lessons (name, lessonNum, acts, lessonPeriod, lessonsYear, lessonsClass, lessonsTeacher, lessonsDepartment) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    
+    // Prepared statement kullanarak veriyi güvenli bir şekilde ekleyelim
+    if ($stmt = mysqli_prepare($connection, $insertLessonQuery)) {
+        // Parametreleri bağla
+        mysqli_stmt_bind_param($stmt, "ssssssss", $lessonName, $lessonNum, $acts, $lessonPeriod,  $lessonYear,  $class, $teacherId, $departmentId);
+        
+        // Sorguyu çalıştır
+        if (mysqli_stmt_execute($stmt)) {
+            // Eklenen lesson_id'yi al
+            $lessonId = mysqli_insert_id($connection);
+            
+            // 'department_lessons' tablosuna ekleyelim
+            $insertDepartmentLessonQuery = "INSERT INTO department_lessons (department_id, lesson_id) VALUES (?, ?)";
+            if ($stmtDept = mysqli_prepare($connection, $insertDepartmentLessonQuery)) {
+                mysqli_stmt_bind_param($stmtDept, "ii", $departmentId, $lessonId);
+                mysqli_stmt_execute($stmtDept);
+                mysqli_stmt_close($stmtDept);
+            }
+
+            // 'teacher_lessons' tablosuna ekleyelim
+            $insertTeacherLessonQuery = "INSERT INTO teacher_lessons (teacher_id, lesson_id) VALUES (?, ?)";
+            if ($stmtTeacher = mysqli_prepare($connection, $insertTeacherLessonQuery)) {
+                mysqli_stmt_bind_param($stmtTeacher, "ii", $teacherId, $lessonId);
+                mysqli_stmt_execute($stmtTeacher);
+                mysqli_stmt_close($stmtTeacher);
+            }
+
+            // Başarılı mesajı ve yönlendirme
+            
+            header("Location: ../pages/generalFacultyList.php");
+            exit();
+        } else {
+            echo "Ders eklenirken bir hata oluştu.";
+        }
+        
+        // Statement'ı kapat
+        mysqli_stmt_close($stmt);
+    }
+}
+
+// Veritabanı bağlantısını kapat
+mysqli_close($connection);
 
 
 

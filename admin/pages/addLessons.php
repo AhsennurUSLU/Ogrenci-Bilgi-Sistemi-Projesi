@@ -11,91 +11,64 @@
         <!-- Main content (form) -->
 
 
-       
 
 
-<div class="container">
-            <form method="POST" action="../functions/addFunctions.php" enctype="multipart/form-data">
+
+        <div class="container">
+            <form method="POST" action="../functions/addFunctions.php">
                 <div class="form-row">
 
                     <div class="form-group col-md-6">
-                        <label for="name">Ders Adı</label>
-                        <input type="text" class="form-control" id="name" name="name">
+                        <label for="lessonName">Ders Adı</label>
+                        <input type="text" class="form-control" id="lessonName" name="lessonName">
                     </div>
-                  
-                    
-                  
+
+                    <div class="form-row">
+
+                        <div class="form-group col-md-6">
+                            <label for="lessonNum">Ders Numarası</label>
+                            <input type="text" class="form-control" id="lessonNum" name="lessonNum">
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <div class="form-row">
 
-                    <div class="form-group col-md-6">
-                        <label for="identificationNum">Ders Numarası</label>
-                        <input type="text" class="form-control" id="identificationNum" name="identificationNum">
-                    </div>
-                    
-                </div>
 
                 <div class="form-row">
 
                     <div class="form-group col-md-6">
-                        <label for="phone">ACTS</label>
-                        <input type="text" class="form-control" id="phone" name="phone">
+                        <label for="acts">ACTS</label>
+                        <input type="text" class="form-control" id="acts" name="acts">
                     </div>
+
                     <div class="form-group col-md-6">
-                        <label for="class">Öğretim Görevlisi</label>
-                        <select id="class" class="form-control" name="class">
-                            <option selected>Seç</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="class">Ders Dönemi</label>
-                        <select id="class" class="form-control" name="class">
+                        <label for="lessonPeriod">Ders Dönemi</label>
+                        <select id="lessonPeriod" class="form-control" name="lessonPeriod">
                             <option selected>Seç</option>
                             <option>Güz Dönemi</option>
                             <option>Bahar Dönemi</option>
-                           
+
                         </select>
                     </div>
-                   
-                </div>
-
-                <div class="form-row">
-
                     <div class="form-group col-md-6">
-                        <label for="faculty">Fakülte</label>
-                      
-                          
-                            <?php
-                      
-                      include "../functions/listFunctions.php";
-
-                      // Fakülteleri al
-                      $faculties = getFaculties();
-
-                      echo  '<select id="faculty" class="form-control" name="faculty">';
-
-                      echo '<option selected>Seç</option>';
-                      foreach ($faculties as $faculty) {
-                        //  echo    '<option>' . htmlspecialchars($faculty) . '</option>';
-                          echo '<option value="' . $faculty['id'] . '">' . htmlspecialchars($faculty['name']) . '</option>';
-
-                      }
-                      echo '</select>';
-                      echo '</div>';
-                      ?>
-                   
-                    <div class="form-group col-md-6">
-                        <label for="department">Bölüm</label>
-                        <select id="department" class="form-control" name="department">
+                        <label for="lessonYear">Ders Yılı</label>
+                        <select id="lessonYear" class="form-control" name="lessonYear">
                             <option selected>Seç</option>
-                          
+                            <option>2020-2021</option>
+                            <option>2021-2022</option>
+                            <option>2022-2023</option>
+                            <option>2023-2024</option>
+                            <option>2024-2025</option>
+                            <option>2025-2026</option>
+                            <option>2026-2027</option>
+
                         </select>
                     </div>
+
+
+                    
                     <div class="form-group col-md-6">
                         <label for="class">Dersi Alacak Sınıf</label>
                         <select id="class" class="form-control" name="class">
@@ -107,8 +80,52 @@
                         </select>
                     </div>
 
+                  
+
                 </div>
-               
+
+                <div class="form-row">
+
+
+                <div class="form-group col-md-6">
+                        <label for="teacherId">Öğretim Görevlisi</label>
+                        <select id="teacherId" class="form-control" name="teacherId">
+                            <option selected>Seç</option>
+                            <?php
+                            // Öğretmenleri al ve listele
+                            include "../functions/listFunctions.php";
+                            $teachers = getTeachers2();
+
+                            foreach ($teachers as $teacher) {
+                                echo '<option value="' . $teacher['id'] . '">' . htmlspecialchars($teacher['appellation']) . "  " . htmlspecialchars($teacher['name']) . "  "  . htmlspecialchars($teacher['surname']) . '</option>';
+                            }
+                            ?>
+                        </select>
+                    </div>
+
+                    
+                    <div class="form-group col-md-6">
+                        <label for="departmentId">Bölüm</label>
+                        <select id="departmentId" class="form-control" name="departmentId">
+                            <option selected>Seç</option>
+                            <?php
+                            // Bölümleri al ve listele
+
+
+                            $departments = getDepartments();
+
+                            foreach ($departments as $department) {
+
+                                echo '<option value="' . $department['id'] . '">' . htmlspecialchars($department['name']) . '</option>';
+                            }
+                            ?>
+                        </select>
+                    </div>
+
+
+
+                </div>
+
 
                 <button type="submit" class="btn btn-primary" name="addLessons">Kaydet</button>
             </form>
@@ -122,32 +139,3 @@
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function() {
-        // Fakülte seçimi değiştiğinde
-        $('#faculty').on('change', function() {
-            var facultyId = $(this).val(); // Seçilen fakültenin id'sini al
-
-            if (facultyId) {
-                $.ajax({
-                    type: 'POST',
-                    url: '../functions/getDepartments.php', // Fakülteye göre bölümleri çeken PHP dosyası
-                    data: { faculty_id: facultyId },
-                    dataType: 'json',
-                    success: function(response) {
-                        $('#department').empty(); // Bölüm select kutusunu temizle
-                        $('#department').append('<option selected>Seç</option>'); // Varsayılan option ekle
-
-                        // Gelen bölümleri döngüyle ekleyelim
-                        $.each(response, function(key, value) {
-                            $('#department').append('<option value="' + value.id + '">' + value.name + '</option>');
-                        });
-                    }
-                });
-            } else {
-                $('#department').empty(); // Eğer fakülte seçilmediyse bölümleri temizle
-                $('#department').append('<option selected>Seç</option>'); // Varsayılan option ekle
-            }
-        });
-    });
-</script>

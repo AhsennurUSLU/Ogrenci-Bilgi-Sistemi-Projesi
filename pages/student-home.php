@@ -1,6 +1,36 @@
+<?php 
+
+session_start();
+
+if (isset($_SESSION['student_id'])) {
+   
+} else {
+    // Giriş yapmamışsa yönlendir
+    header("Location: ../functions/login.php");
+    exit();
+}
+// Kullanıcı oturum bilgilerini çek
+$student_id = $_SESSION['student_id'];
+$student_num    = $_SESSION['student_num'];
+$student_name = $_SESSION['student_name'];
+$student_surname   =   $_SESSION['student_surname'];
+$student_email = $_SESSION['student_email'];
+$student_faculty = $_SESSION['student_faculty'];
+$student_department = $_SESSION['student_department'];
+$student_advisor = $_SESSION['student_advisor'];
+$student_class = $_SESSION['student_class'];
+
+
+
+?>
+
 <?php include  "../config.php";  ?>
 <?php include __DIR__ . "/../includes/header.php"; ?>
 <?php include __DIR__ . "/../includes/content-navbar.php"; ?>
+
+
+
+
 
 <style>
     .card {
@@ -116,31 +146,31 @@
                     <tbody>
                         <tr>
                             <th scope="row">Öğrenci No:</th>
-                            <td>703302002</td>
+                            <td><?php echo $student_num ; ?></td>
                         </tr>
                         <tr>
                             <th scope="row">Adı Soyadı:</th>
-                            <td>Ahsennur Uslu</td>
+                            <td><?php echo $student_name . " " . $student_surname ; ?></td>
                         </tr>
                         <tr>
                             <th scope="row">Fakülte:</th>
-                            <td>Teknoloji Fakültesi</td>
+                            <td><?php echo $student_faculty; ?></td>
                         </tr>
                         <tr>
                             <th scope="row">Bölüm:</th>
-                            <td>Elektrik-Elektronik Mühendisliği</td>
+                            <td><?php echo $student_department; ?></td>
                         </tr>
                         <tr>
                             <th scope="row">Danışman:</th>
-                            <td>Hulusi Karaca</td>
+                            <td><?php echo $student_advisor; ?></td>
                         </tr>
                         <tr>
                             <th scope="row">Sınıf:</th>
-                            <td>2</td>
+                            <td><?php echo $student_class; ?></td>
                         </tr>
                         <tr>
                             <th scope="row">E-Posta:</th>
-                            <td>703302002@ogr.selcuk.edu.tr</td>
+                            <td><?php echo $student_email; ?></td>
                         </tr>
                         <tr>
                             <th scope="row"></th>
@@ -148,7 +178,7 @@
                         </tr>
                         <tr>
                             <th scope="row">Bölüm Adı:</th>
-                            <td>Elektrik-Elektronik Mühendisliği</td>
+                            <td><?php echo $student_department; ?></td>
                         </tr>
                         <tr>
                             <th scope="row">Bölüm Başkanı:</th>

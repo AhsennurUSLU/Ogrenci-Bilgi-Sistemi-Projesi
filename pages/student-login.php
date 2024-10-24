@@ -63,23 +63,26 @@
     
 </style>
 
+
+
+
 <div class="container">
 <div class="wrapper">
     <div class="col-md-6">
         <div class="card">
             <img src="../assets/images/student.png" class="card-img-top" alt="Logo">
             <div class="card-body">
-                <form>
+                <form method="POST" action="../functions/login.php">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="E-Mail Adresiniz" required>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Parola</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <label for="password">Şifre</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Şifreniz" required>
                     </div>
                
-                    <a  class="buton1" type="button" href="../pages/student-home.php">Giriş Yap</a>
+                    <button type="submit" name="loginStudent" class="buton1">Giriş Yap</button>
                 </form>
             </div>
         </div>

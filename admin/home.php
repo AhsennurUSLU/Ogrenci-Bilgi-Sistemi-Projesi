@@ -23,18 +23,21 @@ $facultyQuery = "SELECT COUNT(*) AS faculty_count FROM faculty";
 $departmentQuery = "SELECT COUNT(*) AS department_count FROM department";
 $studentQuery = "SELECT COUNT(*) AS student_count FROM student";
 $teacherQuery = "SELECT COUNT(*) AS teacher_count FROM teacher";
+$lessonQuery = "SELECT COUNT(*) AS lesson_count FROM lessons";
 
 // Sorguları çalıştırıyoruz
 $facultyResult = mysqli_query($connection, $facultyQuery);
 $departmentResult = mysqli_query($connection, $departmentQuery);
 $studentResult = mysqli_query($connection, $studentQuery);
 $teacherResult = mysqli_query($connection, $teacherQuery);
+$lessonResult = mysqli_query($connection, $lessonQuery);
 
 // Sonuçları çekiyoruz
 $facultyCount = mysqli_fetch_assoc($facultyResult)['faculty_count'];
 $departmentCount = mysqli_fetch_assoc($departmentResult)['department_count'];
 $studentCount = mysqli_fetch_assoc($studentResult)['student_count'];
 $teacherCount = mysqli_fetch_assoc($teacherResult)['teacher_count'];
+$lessonCount = mysqli_fetch_assoc($lessonResult)['lesson_count'];
 
 ?>
 

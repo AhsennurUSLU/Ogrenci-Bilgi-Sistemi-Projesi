@@ -64,22 +64,7 @@
                     <h3>ÖĞRENCİ BİLGİ SİSTEMİ</h3>
                 </div>
 
-                <!-- Sağ Taraf -->
-                <div>
-                    <nav>
-                        <ul class="nav">
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="#">Öğrenci Girişi</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="#">Öğretmen Girişi</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="#">İletişim</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+             
             </div>
         </div>
     </header>

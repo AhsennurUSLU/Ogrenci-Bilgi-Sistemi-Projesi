@@ -80,6 +80,60 @@ function getTeachers() {
 
 
 
+// sadece tüm bölümleri çeken fonksiyon
+
+
+function getDepartments() {
+    global $connection;
+
+    $query = "SELECT id, name FROM department";
+    $result = mysqli_query($connection, $query);
+
+    if (!$result) {
+        die("Veritabanı sorgusu başarısız: " . mysqli_error($connection));
+    }
+
+    $departments = array();
+    while ($row = mysqli_fetch_assoc($result)) {
+        $departments[] = $row;
+    }
+
+    return $departments;
+}
+
+
+
+
+
+
+
+
+
+// Öğretmenleri getiren fonksiyon
+function getTeachers2() {
+    global $connection; // Veritabanı bağlantısını kullan
+
+    $query = "SELECT id, name, surname , appellation FROM teacher";
+    $result = mysqli_query($connection, $query);
+
+    if (!$result) {
+        die("Veritabanı sorgusu başarısız: " . mysqli_error($connection));
+    }
+    // Sonuçları dizi halinde döndür
+    $teachers = array();
+   
+    while ($row = mysqli_fetch_assoc($result)) {
+        $teachers[] = $row;
+        }
+    
+    return $teachers;
+}
+
+
+
+
+
+
 ?>
 
 
