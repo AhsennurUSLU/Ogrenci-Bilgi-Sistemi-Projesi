@@ -70,11 +70,11 @@
                 <form method="POST" action="../functions/login.php"> 
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email"  placeholder="E-Mailinizi Giriniz.">
+                        <input type="email" class="form-control" id="email" name="email"  placeholder="E-Mailinizi Giriniz." required>
                     </div>
                     <div class="form-group">
                         <label for="password">Şifre</label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Şifrenizi Giriniz.">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Şifrenizi Giriniz." required>
                     </div>
                     <!-- <button type="submit" class="buton1">Giriş Yap</button> -->
                    

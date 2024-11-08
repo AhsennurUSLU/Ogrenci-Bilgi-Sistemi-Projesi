@@ -1,118 +1,68 @@
-<style>
-        /* Sidebar Stilleri */
-        .sidebar {
-            height: 100vh;
-            width: 250px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background-color: #343a40;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            overflow-y: auto; /* Uzun içerik olursa kaydırma çubuğu ekler */
-        }
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
 
-        .sidebar .profile-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin: 0 auto;
-            display: block;
-        }
+            <li class="nav-item">
+              <a class="nav-link" href="../pages/teacher-home-page.php">
+                <i class="mdi mdi-grid-large menu-icon"></i>
+                <span class="menu-title">Ana Sayfa</span>
+              </a>
+            </li>
 
-        .sidebar .student-name {
-            color: #ffffff;
-            text-align: center;
-            margin-top: 10px;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
+            <li class="nav-item nav-category">Menü</li>
+            <li class="nav-item">
 
-        .sidebar .menu {
-            margin-top: 20px;
-            padding-left: 10px;
-        }
+              <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <i class="menu-icon mdi mdi-floor-plan"></i>
+                <span class="menu-title">Derslerim</span>
+                <i class="menu-arrow"></i>
+              </a>
 
-        .sidebar .menu a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 1rem;
-            display: block;
-            padding: 10px 0;
-        }
+              <div class="collapse" id="ui-basic">
+                <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/OBS-Project/admin/pages/generalTeacherList.php">Ders Kaydı</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="/OBS-Project/admin/pages/addTeacher.php">Derslerim</a></li>
+                
+                </ul>
+              </div>
 
-        .sidebar .menu a:hover {
-            background-color: #495057;
-            border-radius: 5px;
-            padding-left: 10px;
-        }
+            </li>
 
-       
-    </style>
+            <li class="nav-item">
 
+              <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+                <i class="menu-icon mdi mdi-card-text-outline"></i>
+                <span class="menu-title">Not Bilgilerim</span>
+                <i class="menu-arrow"></i>
+              </a>
 
-<div class="sidebar">
-        <img src="https://via.placeholder.com/100" alt="Profil Fotoğrafı" class="profile-img">
-        <div class="student-name">
-            Öğrenci İsmi
-        </div>
-        <div class="menu">
-            <a href="#">Anasayfa</a>
-            <a href="#">Notlarım</a>
-            <a href="#">Devamsızlık</a>
-            <a href="#">Ders Kayıt</a>
-            <a href="#">Transkript</a>
-            <a href="#">Danışmanlık</a>
-        </div>
-    </div>
+              <div class="collapse" id="form-elements">
+                <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="/OBS-Project/admin/pages/generalStudentList.php">Güncel Notlarım</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/OBS-Project/admin/pages/addStudent.php">Transkript</a></li>
+                  
+                </ul>
+              </div>
 
-    <!-- İçerik -->
-    <div class="content">
-        <div class="card-container">
-            <!-- Kartlar burada -->
-            <div class="card">
-                <a href="pages/student_login.php">
-                    <img src="../assets/images/kep.png" alt="Student">
-                    <div class="card-body">
-                        <h5 class="card-title">Not Bilgilerim</h5>
-                    </div>
-                </a>
-            </div>
+            </li>
 
-            <div class="card">
-                <a href="pages/teacher_login.php">
-                    <img src="../assets/images/kep.png" alt="Teacher">
-                    <div class="card-body">
-                        <h5 class="card-title">Devamsızlık Bilgilerim</h5>
-                    </div>
-                </a>
-            </div>
+            <li class="nav-item">
 
-            <div class="card">
-                <a href="pages/admin_login.php">
-                    <img src="../assets/images/kep.png" alt="Admin">
-                    <div class="card-body">
-                        <h5 class="card-title">Ders Kaydı</h5>
-                    </div>
-                </a>
-            </div>
+              <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+                <i class="menu-icon mdi mdi-card-text-outline"></i>
+                <span class="menu-title">Takvim</span>
+                <i class="menu-arrow"></i>
+              </a>
 
-            <div class="card">
-                <a href="pages/admin_login.php">
-                    <img src="../assets/images/kep.png" alt="Admin">
-                    <div class="card-body">
-                        <h5 class="card-title">Transkript</h5>
-                    </div>
-                </a>
-            </div>
-
-            <div class="card">
-                <a href="pages/admin_login.php">
-                    <img src="../assets/images/kep.png" alt="Admin">
-                    <div class="card-body">
-                        <h5 class="card-title">Danışmanlık İşlemleri</h5>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
+              <div class="collapse" id="form-elements">
+                <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="/OBS-Project/admin/pages/generalStudentList.php">Takvim</a></li>
+                <li class="nav-item"><a class="nav-link" href="/OBS-Project/admin/pages/generalStudentList.php">Sınav Tarihleri</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/OBS-Project/admin/pages/addStudent.php">Görevler</a></li>
+                  
+                </ul>
+              </div>
+              
+            </li>
+          
+          </ul>
+        </nav>

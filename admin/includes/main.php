@@ -6,16 +6,16 @@
                   <div class="d-sm-flex align-items-center justify-content-between border-bottom">
                     <ul class="nav nav-tabs" role="tablist">
                       <li class="nav-item">
-                        <a class="nav-link active ps-0" id="home-tab" data-bs-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Bakış</a>
+                        <a class="nav-link active ps-0" id="home-tab" data-bs-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Genel</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#audiences" role="tab" aria-selected="false">Audiences</a>
+                        <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#audiences" role="tab" aria-selected="false">menü-2</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#demographics" role="tab" aria-selected="false">Demographics</a>
+                        <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#demographics" role="tab" aria-selected="false">menü-3</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link border-0" id="more-tab" data-bs-toggle="tab" href="#more" role="tab" aria-selected="false">More</a>
+                        <a class="nav-link border-0" id="more-tab" data-bs-toggle="tab" href="#more" role="tab" aria-selected="false">menü-4</a>
                       </li>
                     </ul>
                     <div>
@@ -34,32 +34,32 @@
                             <div>
                               <p class="statistics-title">Fakülte</p>
                               <h3 class="rate-percentage"><?php echo $facultyCount; ?></h3>
-                              <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>-0.5%</span></p>
+                              
                             </div>
                             <div>
                               <p class="statistics-title">Bölüm</p>
                               <h3 class="rate-percentage"><?php echo $departmentCount; ?></h3>
-                              <p class="text-success d-flex"><i class="mdi mdi-menu-up"></i><span>+0.1%</span></p>
+                              
                             </div>
                             <div>
                               <p class="statistics-title">Öğrenci</p>
                               <h3 class="rate-percentage"><?php echo $studentCount; ?></h3>
-                              <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>68.8</span></p>
+                           
                             </div>
                             <div class="d-none d-md-block">
                               <p class="statistics-title">Akademik Personel</p>
                               <h3 class="rate-percentage"><?php echo $teacherCount; ?></h3>
-                              <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span>+0.8%</span></p>
+                           
                             </div>
                             <div class="d-none d-md-block">
                               <p class="statistics-title">Ders Sayısı</p>
                               <h3 class="rate-percentage"><?php echo $lessonCount; ?></h3>
-                              <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>68.8</span></p>
+                           
                             </div>
                             <div class="d-none d-md-block">
                               <p class="statistics-title">İdari Personel</p>
                               <h3 class="rate-percentage">Sayı gelcek</h3>
-                              <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span>+0.8%</span></p>
+                              
                             </div>
                           </div>
                         </div>
